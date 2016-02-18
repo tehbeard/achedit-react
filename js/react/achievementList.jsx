@@ -5,7 +5,7 @@ export default class AchievementList extends React.Component {
             <form>
                 <input id="filter" value=""/>
             </form>
-            <table class="table">
+            <table className="table">
                 <thead>
                     <tr>
                         <th>Slug</th>
