@@ -2,14 +2,9 @@ import update from 'react-addons-update';
 import { createStore, combineReducers  } from 'redux';
 import * as ActionType from './actionTypes.js';
 
-const initialState = {
-    achievements: [],
-    ui: {}
-}
-
 function achievements(state, action) {
     if (typeof state === 'undefined') {
-        return initialState;
+        return [];
     }
     switch (action.type) {
         case ActionType.ACH_ADD:
@@ -29,6 +24,9 @@ function achievements(state, action) {
     }
 }
 function ui(state, action){
+    if (typeof state === 'undefined') {
+        return [];
+    }
     if(action.type == ActionType.UI_ACH_SELECT){
         return update(state, {
             selected: {$set: action.id}
