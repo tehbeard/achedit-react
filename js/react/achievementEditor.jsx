@@ -6,7 +6,7 @@ export default class AchievementEditor extends React.Component {
       var testData = {type:"test"};
     return (<div className="fluid-container">
             <div className="row">
-                <div className="col-xs-6 load-area">
+                <div className="col-xs-8 load-area">
                     <div className="input-group">
                             <span className="input-group-btn">
                                 <span className="btn btn-primary btn-file">
@@ -16,14 +16,14 @@ export default class AchievementEditor extends React.Component {
                             <input type="text" className="form-control" readonly />
                         </div>
                 </div>
-                <div className="col-xs-6">
-                    <button className="btn btn-primary" id="save">Save</button>
+                <div className="col-xs-4">
+                    <button className="btn btn-primary" id="save">Save to file</button>
                 </div>
             </div>
             <div className="row">
                 <div className="col-md-8">
-                    <button id="save-ach" className="btn btn-success">Save Achievement</button>
                     <Achievement></Achievement>
+                    <button id="save-ach" className="btn btn-success">Save Achievement</button>
                 </div>
                 <div className="col-md-4">
                     <AchievementList data={[{slug:"slug1",name:"name1"}, {slug:"slug2",name:"name2"}, {slug:"slug3",name:"name3"}]}/>
