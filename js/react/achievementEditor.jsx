@@ -1,39 +1,10 @@
 import React from 'react';
 import Achievement from './achievement.jsx';
 import AchievementList from './achievementList.jsx';
-import {Configurable as Configurable, cache as ConfigCache} from './configurable.jsx'; 
-ConfigCache('test',[
-        {
-          "key": "region",
-          "name": "Region name",
-          "type": "text",
-          "min": false,
-          "max": false
-        },
-        {
-          "key": "world",
-          "name": "World name",
-          "type": "location",
-          "min": false,
-          "max": false
-        },
-        {
-          "key": "inside",
-          "name": "Inside only",
-          "type": "selection",
-          "values":["a","b","c"],
-          "min": false,
-          "max": false
-        }
-        
-      ]); 
 export default class AchievementEditor extends React.Component {
   render() {
       var testData = {type:"test"};
     return (<div className="fluid-container">
-            <form className="form">
-                <Configurable data={testData} />
-            </form>
             <div className="row">
                 <div className="col-xs-6 load-area">
                     <div className="input-group">
@@ -50,11 +21,11 @@ export default class AchievementEditor extends React.Component {
                 </div>
             </div>
             <div className="row">
-                <div className="col-md-5">
+                <div className="col-md-8">
                     <button id="save-ach" className="btn btn-success">Save Achievement</button>
                     <Achievement></Achievement>
                 </div>
-                <div className="col-md-7">
+                <div className="col-md-4">
                     <AchievementList data={[{slug:"slug1",name:"name1"}, {slug:"slug2",name:"name2"}, {slug:"slug3",name:"name3"}]}/>
                     <button className="btn btn-primary" id="add-new">New Achievement</button>
                 </div>
