@@ -17,12 +17,14 @@ export default class AchievementList extends React.Component {
                 </thead>
                 <tbody>
                 {this.props.data.filter((e)=>true).map(
-                    (e)=><tr>
+                    (e,i)=><tr>
                         <td>{e.slug}</td>
                         <td>{e.name}</td>
                         <td>{e.descrip}</td>
                         <td><button className="edit">Edit</button></td>
-                        <td><button className="remove">Remove</button></td>
+                        <td><button className="remove" onClick={()=>{
+                            this.props.store.dispatch({type:"ACH_DEL", id: i})
+                        }}>Remove</button></td>
                     </tr>
                 )}
                 </tbody>

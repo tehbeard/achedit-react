@@ -26,8 +26,10 @@ export default class AchievementEditor extends React.Component {
                     <button id="save-ach" className="btn btn-success">Save Achievement</button>
                 </div>
                 <div className="col-md-4">
-                    <AchievementList data={[{slug:"slug1",name:"name1"}, {slug:"slug2",name:"name2"}, {slug:"slug3",name:"name3"}]}/>
-                    <button className="btn btn-primary" id="add-new">New Achievement</button>
+                    <AchievementList store={this.props.store} data={this.props.store.getState().achievements}/>
+                    <button className="btn btn-primary" onClick={()=>{
+                        this.props.store.dispatch({type:"ACH_ADD"});
+                    }}>New Achievement</button>
                 </div>
             </div>
         </div>)
